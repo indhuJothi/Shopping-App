@@ -75,7 +75,9 @@ export class CustomerControllerBase {
       data: data,
       select: {
         address: true,
+        age: true,
         createdAt: true,
+        gender: true,
         id: true,
         name: true,
         updatedAt: true,
@@ -113,7 +115,9 @@ export class CustomerControllerBase {
       ...args,
       select: {
         address: true,
+        age: true,
         createdAt: true,
+        gender: true,
         id: true,
         name: true,
         updatedAt: true,
@@ -150,7 +154,9 @@ export class CustomerControllerBase {
       where: params,
       select: {
         address: true,
+        age: true,
         createdAt: true,
+        gender: true,
         id: true,
         name: true,
         updatedAt: true,
@@ -208,7 +214,9 @@ export class CustomerControllerBase {
         data: data,
         select: {
           address: true,
+          age: true,
           createdAt: true,
+          gender: true,
           id: true,
           name: true,
           updatedAt: true,
@@ -246,7 +254,9 @@ export class CustomerControllerBase {
         where: params,
         select: {
           address: true,
+          age: true,
           createdAt: true,
+          gender: true,
           id: true,
           name: true,
           updatedAt: true,

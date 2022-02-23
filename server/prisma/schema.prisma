@@ -20,11 +20,13 @@ model User {
 
 model Customer {
   address   String?
-  createdAt DateTime @default(now())
-  id        String   @id @default(cuid())
+  age       Int?
+  createdAt DateTime            @default(now())
+  gender    EnumCustomerGender?
+  id        String              @id @default(cuid())
   name      String?
   orders    Order[]
-  updatedAt DateTime @updatedAt
+  updatedAt DateTime            @updatedAt
 }
 
 model Order {
@@ -34,4 +36,10 @@ model Order {
   id         String    @id @default(cuid())
   price      Float
   updatedAt  DateTime  @updatedAt
+}
+
+enum EnumCustomerGender {
+  Male
+  Female
+  Transgender
 }
