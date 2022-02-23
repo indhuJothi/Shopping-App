@@ -13,7 +13,9 @@ import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
 import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { Type } from "class-transformer";
-import { IsOptional } from "class-validator";
+import { IsOptional, IsEnum } from "class-validator";
+import { IntNullableFilter } from "../../util/IntNullableFilter";
+import { EnumCustomerGender } from "./EnumCustomerGender";
 import { StringFilter } from "../../util/StringFilter";
 @InputType()
 class CustomerWhereInput {
@@ -27,6 +29,28 @@ class CustomerWhereInput {
     nullable: true,
   })
   address?: StringNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    type: IntNullableFilter,
+  })
+  @Type(() => IntNullableFilter)
+  @IsOptional()
+  @Field(() => IntNullableFilter, {
+    nullable: true,
+  })
+  age?: IntNullableFilter;
+
+  @ApiProperty({
+    required: false,
+    enum: EnumCustomerGender,
+  })
+  @IsEnum(EnumCustomerGender)
+  @IsOptional()
+  @Field(() => EnumCustomerGender, {
+    nullable: true,
+  })
+  gender?: "Male" | "Female" | "Transgender";
 
   @ApiProperty({
     required: false,

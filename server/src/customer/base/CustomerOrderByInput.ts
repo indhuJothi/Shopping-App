@@ -34,7 +34,25 @@ class CustomerOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
+  age?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["Asc", "Desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
   createdAt?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["Asc", "Desc"],
+  })
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  gender?: SortOrder;
 
   @ApiProperty({
     required: false,

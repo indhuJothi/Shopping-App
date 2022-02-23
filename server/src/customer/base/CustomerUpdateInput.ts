@@ -11,7 +11,8 @@
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString, IsOptional } from "class-validator";
+import { IsString, IsOptional, IsInt, IsEnum } from "class-validator";
+import { EnumCustomerGender } from "./EnumCustomerGender";
 @InputType()
 class CustomerUpdateInput {
   @ApiProperty({
@@ -24,6 +25,28 @@ class CustomerUpdateInput {
     nullable: true,
   })
   address?: string | null;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsInt()
+  @IsOptional()
+  @Field(() => Number, {
+    nullable: true,
+  })
+  age?: number | null;
+
+  @ApiProperty({
+    required: false,
+    enum: EnumCustomerGender,
+  })
+  @IsEnum(EnumCustomerGender)
+  @IsOptional()
+  @Field(() => EnumCustomerGender, {
+    nullable: true,
+  })
+  gender?: "Male" | "Female" | "Transgender" | null;
 
   @ApiProperty({
     required: false,
