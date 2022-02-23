@@ -1,0 +1,19 @@
+{
+  "dataServiceGeneratorVersion": "0.11.2",
+  "appInfo": {
+    "name": "Shopping App",
+    "description": "",
+    "version": "cyua36qg",
+    "id": "ckzxtmjd933677001s6vtie5v6o",
+    "url": "https://app.amplication.com/ckzxtmjd933677001s6vtie5v6o",
+    "settings": {
+      "dbHost": "localhost",
+      "dbName": "",
+      "dbPassword": "admin",
+      "dbPort": 5432,
+      "dbUser": "admin",
+      "appId": "ckzxtmjd933677001s6vtie5v6o",
+      "authProvider": "Jwt"
+    }
+  }
+}
